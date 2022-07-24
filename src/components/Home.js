@@ -32,6 +32,27 @@ function Home() {
          leftBtnText="Custom order"
          rightBtnText="Existing inventory"
        />
+       <Section
+         title="Lowest cost solar panels in America "
+         description="Money-back guarantee"
+         backgroundImg="solar-panel.jpg"
+         leftBtnText="Custom order"
+         rightBtnText="Learn more"
+       />
+       <Section
+         title="Lowest cost solar pSolarfor new Roofs "
+         description=" Solar oofCosts Less than a New Roof Plus Solar Panels"
+         backgroundImg="solar-roof.jpg"
+         leftBtnText="Order Now "
+         rightBtnText="Learn more"
+       />
+       <Section
+         title="Accessories"
+         description=" Solar oofCosts Less than a New Roof Plus Solar Panels"
+         backgroundImg="accessories.jpg"
+         leftBtnText="Show Now "
+     
+       />
      </Container>
    );
 }
