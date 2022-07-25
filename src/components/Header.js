@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import MenuIcon from "@mui/icons-material/Menu";
 import Fade from "react-reveal/Fade";
 import CloseIcon from "@mui/icons-material/Close";
+import { selectCars } from "../features/car/carSlice";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const [burgerStatus, setBurgerStatus] = useState(false);
+ 
+ 
   return (
     <Conatiner>
       <a>
@@ -22,11 +27,11 @@ function Header() {
       <RightMenu>
         <a href="#">Shop</a>
         <a href="#">Tesla Account</a>
-        <CustomMenu />
+        <CustomMenu onClick={() => setBurgerStatus(true)} />
       </RightMenu>
-      <BurgerNav>
+      <BurgerNav show={burgerStatus}>
         <CloseWrapper>
-          <CustomClose />
+          <CustomClose onClick={() => setBurgerStatus(false)} />
         </CloseWrapper>
 
         <li>
@@ -110,6 +115,8 @@ const BurgerNav = styled.div`
   flex-direction: column;
   padding: 20px;
   text-align: start;
+  transform: ${props => props.show ? 'translateX(0)' : 'translateX(100%)'};
+  transition :transform 0.2s ;
   li {
     padding: 15px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -120,10 +127,10 @@ const BurgerNav = styled.div`
 `;
 
 const CustomClose = styled(CloseIcon)`
-cursor: pointer;
+  cursor: pointer;
 `;
- 
+
 const CloseWrapper = styled.div`
-display:flex;
-justify-content:flex-end;
+  display: flex;
+  justify-content: flex-end;
 `;
